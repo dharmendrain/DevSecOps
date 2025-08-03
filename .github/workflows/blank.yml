@@ -1,26 +1,31 @@
-name: CI
+name: CI  # The name of the workflow
 
+# Controls when the workflow runs
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]          # Run on pushes to the main branch
   pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches: [ "main" ]          # Run on pull requests targeting the main branch
+  workflow_dispatch:              # Allow manual triggering from the GitHub Actions tab
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build:                         # Define a job named "build"
+    runs-on: ubuntu-latest       # Use the latest Ubuntu runner for this job
 
     steps:
       - uses: actions/checkout@v3
-      
+        # Checks out the repository so the workflow can access your code
+
       - name: Set up Python 3.x
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+        # Sets up Python environment (any 3.x version)
 
       - name: Install pytest
         run: pip install pytest
+        # Installs the pytest testing framework for running tests
 
       - name: Run tests
         run: pytest
+        # Runs pytest, which discovers and executes test files (like test_greeter.py)
