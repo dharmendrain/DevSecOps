@@ -6,7 +6,7 @@ class Greeter:
         print(f"Hello, {self.name}!")
 
 # Create an instance of the class
-g = Greeter("Alice")
+g = Greeter("Dharmendra")
 
 # Call the greet method
 g.greet()
