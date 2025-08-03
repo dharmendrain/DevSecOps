@@ -1,12 +1,5 @@
-class Greeter:
-    def __init__(self, name):
-        self.name = name
+from greeter import Greeter
 
-    def greet(self):
-        print(f"Hello, {self.name}!")
-
-# Create an instance of the class
-g = Greeter("Dharmendra")
-
-# Call the greet method
-g.greet()
+def test_greet():
+    g = Greeter("Alice")
+    assert g.greet() == "Hello, Alice!"

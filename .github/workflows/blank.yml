@@ -22,17 +22,5 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
-      - name: Create test file
-        run: |
-          echo "class Greeter:" > test_greeter.py
-          echo "    def __init__(self, name):" >> test_greeter.py
-          echo "        self.name = name" >> test_greeter.py
-          echo "    def greet(self):" >> test_greeter.py
-          echo "        return f'Hello, {self.name}!'" >> test_greeter.py
-          echo "" >> test_greeter.py
-          echo "def test_greet():" >> test_greeter.py
-          echo "    g = Greeter('Alice')" >> test_greeter.py
-          echo "    assert g.greet() == 'Hello, Alice!'" >> test_greeter.py
-
       - name: Run tests
-        run: pytest test_greeter.py
+        run: pytest
