@@ -1,5 +1,5 @@
 from greeter import Greeter
 
 def test_greet():
-    g = Greeter("Alice")
+    g = Greeter("Dharmendra")
     assert g.greet() == "Hello, Dharmendra!"
