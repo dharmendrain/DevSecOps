@@ -1,3 +1,4 @@
+#TEST
 from greeter import Greeter
 
 def test_greet():
